@@ -1,0 +1,109 @@
+**Nume: Ciocoiu Diana-Iulia**
+**Grupă: 313CA**
+
+## The Library of HashBabel - tema 2
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡴⠒⠲⠦⣄⣀⣀⣠⣤⣤⠎⠉⠉⢦⠶⠛⠉⢳⠀⠀⠀⠀
+⠀⠀⠀⢰⠇⠀⠀⠀⠈⠉⠀⠀⠀⡏⠀⣴⢲⠼⠶⢄⣀⣼⣇⠀⠀⠀
+⠀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠀⠀⠀⢇⡀⢘⣯⠀⠀⢸⠶⡀⠀⡇⠀⠀
+⠀⠀⠀⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠈⠑⠒⣏⠉⢀⡜⠀⠀⠀
+⠀⠀⠀⣯⣤⣴⣶⡶⠒⣲⣶⣶⣶⣶⣶⣶⣶⣶⣶⣾⣯⣭⣿⠀⠀⠀
+⠐⠒⠚⣿⣿⣿⡏⠀⠺⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠉⠉⠁
+⠀⠀⠤⢿⣿⣿⣡⣴⣾⣿⣿⡿⣕⣲⢿⣿⣿⣿⣿⣿⣿⣿⡟⠒⠂⠀
+⠀⠀⠀⣠⠿⣿⡛⠿⠿⠛⠋⠀⠀⠀⠀⠙⠛⠿⠿⠛⣻⡿⠷⢄⠀⠀
+⠀⠀⠈⠁⠀⠈⠙⠲⠦⣤⣄⣀⣀⣀⣀⣀⣠⣤⠴⠞⠉⠀⠀⠀⠀⠀
+
+
+### Descriere:
+
+* Scurtă descriere a funcționalității temei
+
+Aceasta tema are in vedere implementarea practica a unor hashtable-uri
+in spatele unor biblioteci. O biblioteca reprezinta un hashtable ce 
+tine pe rafturile ei carti care la randul lor au o structura de hashtable.
+Userii sunt stocati intr-o baza de date tot de forma unui hashtable. Acestia
+pot imprumuta carti din biblioteca, pot returna carti , le pot da rating si
+le pot pierde.
+
+Tot sistemul de dat rating se aseamana cu cel de la IMDB (de asta mi am numit
+structura de carte imdb).
+
+* Functii implementate pentru carti:
+-------------------------------------------------------------------------------
+-void add_book(hashtable_t *library)- 
+
+Functia adauga o carte in biblioteca. Prin functia read_book am parsat 
+elementele pe care trebuie sa le adaug. Verific daca cartea exista deja in 
+biblioteca (daca da atunci trebuie modificata).
+
+-------------------------------------------------------------------------------
+-void get_book(hashtable_t *library)-
+
+Functia imi printeaza numele cartii , ratingul, si nr de cumparari (dubios 
+faptul ca e o biblioteca de unde imprumuti carti dar totusi le cumperi). 
+Ratingul depinde de suma tuturor ratingurilor si de nr de purchases. 
+
+-------------------------------------------------------------------------------
+-void get_def(hashtable_t *library)-
+
+Functia imi arata o anumita definitie dintr-o anumita carte.
+
+-------------------------------------------------------------------------------
+-void rmv_def(hashtable_t *library)-
+
+Functia imi sterge o definitie dintr-o carte.
+
+-------------------------------------------------------------------------------
+-void rmv_book(hashtable_t *library)-
+
+Functia elimina o carte din biblioteca.
+
+-------------------------------------------------------------------------------
+-void add_def(hashtable_t *library)-
+
+Functia adauga o noua definite intr-o carte existenta in biblioteca.
+
+-------------------------------------------------------------------------------
+-void sort_books(hashtable_t *library)-
+
+Functia sorteaza cartile in functie de ratingul acestora.
+
+-------------------------------------------------------------------------------
+
+* Functii implementate pentru useri:
+-------------------------------------------------------------------------------
+-void add_user(hashtable_t *users)-
+
+Functia adauga un nou user in hashtable-ul users.
+
+-------------------------------------------------------------------------------
+-void borrow_book(hashtable_t *users, hashtable_t *library)-
+
+Un user poate sa imprumute o carte.
+
+-------------------------------------------------------------------------------
+-void return_book(hashtable_t *users, hashtable_t *library)-
+
+Userul returneaza o carte. Se calculeaza punctele dupa formula data.
+
+-------------------------------------------------------------------------------
+-void lost_book(hashtable_t *users, hashtable_t *library)-
+
+Daca un user pierde o carte i se scad 50 de puncte si cartea este stearsa.
+
+-------------------------------------------------------------------------------
+-void sort_users(hashtable_t *users)-
+
+Functie de sortare a userilor in functie de nr de puncte. Bag userii intr-un
+vector pe care il sortez.
+
+### Comentarii asupra temei:
+
+* Crezi că ai fi putut realiza o implementare mai bună?
+    - as fi putut avea o modularizare mai buna.
+* Ce ai invățat din realizarea acestei teme?
+    - am invatat sa dau debug cu gdb
+    - lucrul cu hashtable-uri
+* Alte comentarii
+
